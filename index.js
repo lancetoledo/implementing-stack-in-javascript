@@ -11,18 +11,17 @@ class Stack {
   }
 
   push(element) {
-    this.data[this.top] = element
-    this.top++;
+    this.data.unshift(element);
     return "Added " + element + " to the top";
   }
 
   pop() {
     this.top--;
-    return this.data.pop();
+    return this.data.shift();
   }
 
   peek() {
-    return this.data[this.top - 1];
+    return this.data[0];
   }
 
   length() {
@@ -44,12 +43,13 @@ test.print(test.push(12));
 test.print(test.push("You"));
 test.print(test.push("Me"));
 test.print(test.push("Lance"));
+test.print(test.data);
 test.print(test.length());
 test.print(test.peek());
 test.print(test.pop());
-test.print(test.pop());
-test.print(test.isEmpty());
-test.print(test.pop());
-test.print(test.pop());
-test.print(test.isEmpty());
 
+test.print(test.pop());
+test.print(test.isEmpty());
+test.print(test.pop());
+test.print(test.pop());
+test.print(test.isEmpty());
